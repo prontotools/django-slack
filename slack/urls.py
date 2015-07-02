@@ -11,8 +11,8 @@ urlpatterns = patterns('',
     url(r'^$', TemplateView.as_view(template_name='base.html')),
 
     # Examples:
-    # url(r'^$', 'django_slack.views.home', name='home'),
-    # url(r'^django_slack/', include('django_slack.foo.urls')),
+    # url(r'^$', 'slack.views.home', name='home'),
+    # url(r'^slack/', include('slack.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),

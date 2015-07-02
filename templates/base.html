@@ -3,7 +3,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>{% block title %}django_slack{% endblock title %}</title>
+    <title>{% block title %}slack{% endblock title %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -22,10 +22,10 @@
     <![endif]-->
 
     <!-- This file store project specific CSS -->
-    <link href="{% static 'css/django_slack.css' %}" rel="stylesheet">
+    <link href="{% static 'css/slack.css' %}" rel="stylesheet">
 
     <!-- Use this to quickly test CSS changes in a template,
-        then move to django_slack.css -->
+        then move to slack.css -->
     {% block extra_css %}{% endblock extra_css %}
   </head>
 
@@ -39,7 +39,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">django_slack</a>
+          <a class="navbar-brand" href="#">slack</a>
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
@@ -68,7 +68,7 @@
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
 
     <!-- place project specific Javascript in this file -->
-    <script src="{% static 'js/django_slack.js' %}"></script>
+    <script src="{% static 'js/slack.js' %}"></script>
 
     {% block extra_js %}{% endblock extra_js %}
   </body>
