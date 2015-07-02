@@ -6,4 +6,4 @@ env:
 install:
  - pip install -q -r requirements/test.txt
 script:
- - sh -c 'cd django_slack && python manage.py test'
+ - sh -c 'cd django_slack && python manage.py test --settings=django_slack.settings.test'
