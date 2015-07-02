@@ -5,3 +5,5 @@ env:
  - DJANGO_VERSION=1.6.2
 install:
  - pip install -q -r requirements/test.txt --use-mirrors
+script:
+ - cd django_slack && python manage.py test
