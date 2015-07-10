@@ -3,7 +3,7 @@ python:
  - "2.7"
 env:
  global:
-   - DJANGO_TEST_TEMP_DIR=`pwd`"/slack/settings"
+   - DJANGO_TEST_TEMP_DIR=$TRAVIS_BUILD_DIR/slack/settings
  matrix:
    - DJANGO_VERSION=1.6.2
 install:
