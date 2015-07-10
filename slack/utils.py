@@ -12,6 +12,10 @@ class SlackHandler(AdminEmailHandler):
         return getattr(settings, 'SLACK_%s' % suffix, default)
 
     def emit(self, record):
+        is_slack_enabled = getattr(settings, 'IS_SLACK_ENABLED', False)
+        if not is_slack_enabled:
+            return
+
         TOKEN = self.app_setting('TOKEN', None)
         CHANNEL = self.app_setting('CHANNEL', '#general')
         USERNAME = self.app_setting('USERNAME', 'django')

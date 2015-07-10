@@ -66,7 +66,8 @@ class SlackHandlerTest(SimpleTestCase, AdminScriptTestCase):
             'META': {
                 'SERVER_NAME': True
             }
-        }
+        },
+        IS_SLACK_ENABLED=True
     )
     @patch('slack.utils.requests.post')
     def test_should_send_message_to_slack_with_correct_parameter(
@@ -114,7 +115,8 @@ class SlackHandlerTest(SimpleTestCase, AdminScriptTestCase):
     @override_settings(
         SLACK_TOKEN='fsk33',
         SLACK_CHANNEL='#pw-errors',
-        SLACK_PARAMS=None
+        SLACK_PARAMS=None,
+        IS_SLACK_ENABLED=True
     )
     @patch('slack.utils.requests.post')
     def test_should_send_all_parameter_when_not_set_slack_param(
@@ -172,7 +174,8 @@ class SlackHandlerTest(SimpleTestCase, AdminScriptTestCase):
             'META': {
                 'SERVER_NAME': True
             }
-        }
+        },
+        IS_SLACK_ENABLED=True
     )
     @patch('slack.utils.requests.post')
     def test_not_set_get_should_not_send_get_query_string_data_to_slack(
@@ -225,7 +228,8 @@ class SlackHandlerTest(SimpleTestCase, AdminScriptTestCase):
             'META': {
                 'SERVER_NAME': True
             }
-        }
+        },
+        IS_SLACK_ENABLED=True
     )
     @patch('slack.utils.requests.post')
     def test_not_post_should_not_send_post_query_string_data_to_slack(
@@ -277,7 +281,8 @@ class SlackHandlerTest(SimpleTestCase, AdminScriptTestCase):
             'COOKIES': {
                 'sessionid': True
             },
-        }
+        },
+        IS_SLACK_ENABLED=True
     )
     @patch('slack.utils.requests.post')
     def test_not_set_meta_should_not_send_meta_data_to_slack(
@@ -328,7 +333,8 @@ class SlackHandlerTest(SimpleTestCase, AdminScriptTestCase):
             'META': {
                 'SERVER_NAME': True
             }
-        }
+        },
+        IS_SLACK_ENABLED=True
     )
     @patch('slack.utils.requests.post')
     def test_not_set_cookie_should_not_send_cookie_data_to_slack(
@@ -383,7 +389,8 @@ class SlackHandlerTest(SimpleTestCase, AdminScriptTestCase):
             'META': {
                 'SERVER_NAME': True
             }
-        }
+        },
+        IS_SLACK_ENABLED=True
     )
     @patch('slack.utils.requests.post')
     def test_set_get_false_should_not_send_get_query_string_data_to_slack(
@@ -435,7 +442,8 @@ class SlackHandlerTest(SimpleTestCase, AdminScriptTestCase):
                 'sessionid': True
             },
             'META': False
-        }
+        },
+        IS_SLACK_ENABLED=True
     )
     @patch('slack.utils.requests.post')
     def test_set_meta_false_should_not_send_meta_data_to_slack(
@@ -487,7 +495,8 @@ class SlackHandlerTest(SimpleTestCase, AdminScriptTestCase):
                 'sessionid': True
             },
             'META': {}
-        }
+        },
+        IS_SLACK_ENABLED=True
     )
     @patch('slack.utils.requests.post')
     def test_set_meta_with_empty_list_should_not_send_meta_data_to_slack(
@@ -539,7 +548,8 @@ class SlackHandlerTest(SimpleTestCase, AdminScriptTestCase):
                 'sessionid': True
             },
             'META': {}
-        }
+        },
+        IS_SLACK_ENABLED=True
     )
     @patch('slack.utils.requests.post')
     def test_status_from_slack_false_should_send_email(
@@ -591,7 +601,8 @@ class SlackHandlerTest(SimpleTestCase, AdminScriptTestCase):
                 'sessionid': True
             },
             'META': {}
-        }
+        },
+        IS_SLACK_ENABLED=True
     )
     @patch('slack.utils.requests.post')
     def test_send_to_slack_error_should_send_email(
@@ -641,7 +652,8 @@ class SlackHandlerTest(SimpleTestCase, AdminScriptTestCase):
                 'sessionid': True
             },
             'META': {'SERVER_NAME': True}
-        }
+        },
+        IS_SLACK_ENABLED=True
     )
     @patch('slack.utils.requests.post')
     def test_should_not_error_when_no_meta_data_in_request(
