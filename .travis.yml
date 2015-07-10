@@ -3,6 +3,7 @@ python:
  - "2.7"
 env:
  - DJANGO_VERSION=1.6.2
+ - DJANGO_TEST_TEMP_DIR=slack/settings
 install:
  - pip install -q -r requirements/test.txt
 script:
