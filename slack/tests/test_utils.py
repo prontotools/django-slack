@@ -5,9 +5,10 @@ from django.core import mail
 from django.http import request, QueryDict
 from django.test import SimpleTestCase
 from django.test.utils import override_settings
+from admin_scripts.tests import AdminScriptTestCase
 
 
-class SlackHandlerTest(SimpleTestCase):
+class SlackHandlerTest(SimpleTestCase, AdminScriptTestCase):
     def setUp(self):
         self.logger = logging.getLogger('django.request')
 
@@ -16,6 +17,37 @@ class SlackHandlerTest(SimpleTestCase):
         self.req.POST = QueryDict('test_post=1')
         self.req.META['SERVER_NAME'] = 'server_name'
         self.req.COOKIES['sessionid'] = '2441'
+        #TEMP_DIR = tempfile.mkdtemp(prefix='django_')
+        #os.environ['DJANGO_TEST_TEMP_DIR'] = 'temp'
+        log_config = """{
+    'version': 1,
+    'disable_existing_loggers': False,
+    'filters': {
+        'require_debug_false': {
+            '()': 'django.utils.log.RequireDebugFalse'
+        }
+    },
+    'handlers': {
+        'mail_admins': {
+            'level': 'ERROR',
+            'filters': ['require_debug_false'],
+            'class': 'django.utils.log.AdminEmailHandler'
+        },
+        'slack': {
+            'level': 'ERROR',
+            'filters': ['require_debug_false'],
+            'class': 'slack.utils.SlackHandler'
+        }
+    },
+    'loggers': {
+        'django.request': {
+            'handlers': ['mail_admins', 'slack'],
+            'level': 'ERROR',
+            'propagate': True,
+        },
+    }
+}"""
+        self.write_settings('settings.py', sdict={'LOGGING': log_config})
 
     def get_slack_handler(self, logger):
         slack_handler = [
