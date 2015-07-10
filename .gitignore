@@ -57,5 +57,3 @@ docs/_build/
 target/
 
 .idea
-
-slack/settings/test_project/settings.py
