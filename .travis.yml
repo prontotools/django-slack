@@ -4,7 +4,8 @@ python:
 env:
  global:
    - DJANGO_TEST_TEMP_DIR=$(pwd)"/slack/settings"
- - DJANGO_VERSION=1.6.2
+ matrix:
+   - DJANGO_VERSION=1.6.2
 install:
  - pip install -q -r requirements/test.txt
 script:
