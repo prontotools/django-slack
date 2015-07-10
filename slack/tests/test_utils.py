@@ -17,8 +17,6 @@ class SlackHandlerTest(SimpleTestCase, AdminScriptTestCase):
         self.req.POST = QueryDict('test_post=1')
         self.req.META['SERVER_NAME'] = 'server_name'
         self.req.COOKIES['sessionid'] = '2441'
-        #TEMP_DIR = tempfile.mkdtemp(prefix='django_')
-        #os.environ['DJANGO_TEST_TEMP_DIR'] = 'temp'
         log_config = """{
     'version': 1,
     'disable_existing_loggers': False,
