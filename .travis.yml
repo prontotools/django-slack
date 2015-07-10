@@ -9,4 +9,4 @@ env:
 install:
  - pip install -q -r requirements/test.txt
 script:
- - python manage.py test --settings=slack.settings.test
+ - python manage.py test slack.tests.test_utils --settings=slack.settings.test --failfast
