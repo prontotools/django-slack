@@ -39,7 +39,7 @@ class SlackHandlerTest(SimpleTestCase):
         }
     )
     @patch('slack.utils.requests.post')
-    def test_should_send_message_to_slack_with_correct_paramater(
+    def test_should_send_message_to_slack_with_correct_parameter(
         self, mock_request
     ):
         mock_request.return_value.status_code = 200
