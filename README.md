@@ -36,6 +36,7 @@ LOGGING = {
 ```
 
 ```
+IS_SLACK_ENABLED = True
 SLACK_TOKEN = '<token>'
 SLACK_CHANNEL = '#<channel>'
 SLACK_USERNAME = '<username>'
