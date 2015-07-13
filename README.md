@@ -2,6 +2,12 @@
 [![Build
 Status](https://travis-ci.org/prontodev/django-slack.svg?branch=master)](https://travis-ci.org/prontodev/django-slack)
 
+## Installation
+
+```
+pip install git+git://github.com/prontodev/django-slack.git
+```
+
 ## Django Settings Example
 
 ```
