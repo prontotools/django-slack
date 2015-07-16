@@ -2,6 +2,10 @@
 [![Build
 Status](https://travis-ci.org/prontodev/django-slack.svg?branch=master)](https://travis-ci.org/prontodev/django-slack)
 
+## Overview
+
+Currently Django Slack is an error logging integration with the Slack API. Setting it up will send all of your Django errors into a Slack Channel of your choosing. 
+
 ## Installation
 
 ```
